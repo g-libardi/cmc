@@ -1,0 +1,25 @@
+\doxysection{scanner.\+h}
+\hypertarget{scanner_8h_source}{}\label{scanner_8h_source}\index{include/scanner.h@{include/scanner.h}}
+\mbox{\hyperlink{scanner_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SCANNER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SCANNER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structScanner}{Scanner}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ FILE\ *file;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ *buffer;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ buffer\_size;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ position;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ char\ (*\mbox{\hyperlink{structScanner_a86db80313279f8119914264e99a17ae1}{next}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{structScanner}{Scanner}}\ *scanner);}
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{scanner_8h_ab7aab08f63bfab5b0c5b0684c2fe11dd}{Scanner}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \mbox{\hyperlink{structScanner}{Scanner}}\ \mbox{\hyperlink{scanner_8h_a61b71488686af0e502b0d7d3204cd3c0}{new\_scanner}}(\textcolor{keywordtype}{char}\ *filename,\ \textcolor{keywordtype}{int}\ buffer\_size);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scanner_8h_a81ac07aaa7d21e5c5e917bec33358544}{free\_scanner}}(\mbox{\hyperlink{structScanner}{Scanner}}\ *scanner);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCANNER\_H}}
+
+\end{DoxyCode}

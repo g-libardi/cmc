@@ -1,0 +1,60 @@
+\doxysection{Scanner Struct Reference}
+\hypertarget{structScanner}{}\label{structScanner}\index{Scanner@{Scanner}}
+
+
+\doxylink{structScanner}{Scanner} structure.  
+
+
+
+
+{\ttfamily \#include $<$scanner.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structScanner_a0677cd2f1ce3e8d2ecaa26a2c820ad65}\label{structScanner_a0677cd2f1ce3e8d2ecaa26a2c820ad65} 
+FILE \texorpdfstring{$\ast$}{*} {\bfseries file}
+\item 
+\Hypertarget{structScanner_a51a5ab3af351fccda05ad8a58b72097c}\label{structScanner_a51a5ab3af351fccda05ad8a58b72097c} 
+char \texorpdfstring{$\ast$}{*} {\bfseries buffer}
+\item 
+\Hypertarget{structScanner_a9049c9a6883f01db8f5b607c3338fdb0}\label{structScanner_a9049c9a6883f01db8f5b607c3338fdb0} 
+int {\bfseries buffer\+\_\+size}
+\item 
+\Hypertarget{structScanner_a2ede0fb388680e9c64b9c83c6983402c}\label{structScanner_a2ede0fb388680e9c64b9c83c6983402c} 
+int {\bfseries position}
+\item 
+\Hypertarget{structScanner_a66539a7e689b78d19c3f620283ed773b}\label{structScanner_a66539a7e689b78d19c3f620283ed773b} 
+int {\bfseries size}
+\item 
+char(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structScanner_a86db80313279f8119914264e99a17ae1}{next}} )(struct \mbox{\hyperlink{structScanner}{Scanner}} \texorpdfstring{$\ast$}{*}scanner)
+\begin{DoxyCompactList}\small\item\em Get the next character from the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structScanner}{Scanner} structure. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structScanner_a86db80313279f8119914264e99a17ae1}\label{structScanner_a86db80313279f8119914264e99a17ae1} 
+\index{Scanner@{Scanner}!next@{next}}
+\index{next@{next}!Scanner@{Scanner}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily char(\texorpdfstring{$\ast$}{*} Scanner\+::next) (struct \mbox{\hyperlink{structScanner}{Scanner}} \texorpdfstring{$\ast$}{*}scanner)}
+
+
+
+Get the next character from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & The scanner pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next character from the file or EOF if the end of the file is reached. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{scanner_8h}{scanner.\+h}}\end{DoxyCompactItemize}

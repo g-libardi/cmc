@@ -1,0 +1,68 @@
+\doxysection{include/scanner.h File Reference}
+\hypertarget{scanner_8h}{}\label{scanner_8h}\index{include/scanner.h@{include/scanner.h}}
+
+
+This module reads streams of characters from a file.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structScanner}{Scanner}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structScanner}{Scanner} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{scanner_8h_ab7aab08f63bfab5b0c5b0684c2fe11dd}\label{scanner_8h_ab7aab08f63bfab5b0c5b0684c2fe11dd} 
+typedef struct Scanner {\bfseries Scanner}
+\begin{DoxyCompactList}\small\item\em \doxylink{structScanner}{Scanner} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structScanner}{Scanner}} \mbox{\hyperlink{scanner_8h_a61b71488686af0e502b0d7d3204cd3c0}{new\+\_\+scanner}} (char \texorpdfstring{$\ast$}{*}filename, int buffer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Create a scanner instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{scanner_8h_a81ac07aaa7d21e5c5e917bec33358544}{free\+\_\+scanner}} (\mbox{\hyperlink{structScanner}{Scanner}} \texorpdfstring{$\ast$}{*}scanner)
+\begin{DoxyCompactList}\small\item\em Free the scanner resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module reads streams of characters from a file. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{scanner_8h_a81ac07aaa7d21e5c5e917bec33358544}\label{scanner_8h_a81ac07aaa7d21e5c5e917bec33358544} 
+\index{scanner.h@{scanner.h}!free\_scanner@{free\_scanner}}
+\index{free\_scanner@{free\_scanner}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{free\_scanner()}{free\_scanner()}}
+{\footnotesize\ttfamily void free\+\_\+scanner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structScanner}{Scanner}} \texorpdfstring{$\ast$}{*}}]{scanner }\end{DoxyParamCaption})}
+
+
+
+Free the scanner resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & The scanner pointer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{scanner_8h_a61b71488686af0e502b0d7d3204cd3c0}\label{scanner_8h_a61b71488686af0e502b0d7d3204cd3c0} 
+\index{scanner.h@{scanner.h}!new\_scanner@{new\_scanner}}
+\index{new\_scanner@{new\_scanner}!scanner.h@{scanner.h}}
+\doxysubsubsection{\texorpdfstring{new\_scanner()}{new\_scanner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structScanner}{Scanner}} new\+\_\+scanner (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{buffer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Create a scanner instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path to read. \\
+\hline
+{\em buffer\+\_\+size} & The buffer size to read the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scanner instance. 
+\end{DoxyReturn}

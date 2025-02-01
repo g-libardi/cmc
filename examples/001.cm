@@ -1,0 +1,6 @@
+
+int number = 0;
+int main() {
+    number = 5;
+    return 0;
+}
