@@ -39,11 +39,16 @@ typedef struct Token {
     char *lexeme;
     TokenType type;
     struct Token *next;
+    int line;
 } Token;
 
 
 Token *tokenize(char *filename);
 
+char *token_type_to_str(TokenType type);
+
+void free_token(Token *token);
+void free_tokens(Token *token);
 
 #endif // LEXER_H
 

@@ -1,0 +1,10 @@
+
+int main() {
+    int number = 0;
+    number = 5;
+    if (!(number == 3)) {
+        number = 6;
+    }
+    return 0;
+}
+

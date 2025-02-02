@@ -1,6 +1,11 @@
 
-int number = 0;
 int main() {
-    number = 5;
+    int number = 5;
+    if (number == 5) {
+        number = 6;
+    }
+    while (number == 6) {
+        number = 7;
+    }
     return 0;
 }
