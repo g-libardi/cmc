@@ -1,6 +1,14 @@
+/**
+ * @file lexer.h
+ * @brief This module tokenizes a C file.
+ */
+
 #ifndef LEXER_H
 #define LEXER_H
 
+/**
+ * @brief Token types enum.
+ */
 typedef enum {
     ID_TOKEN,
     NUM_TOKEN,
@@ -35,6 +43,9 @@ typedef enum {
 } TokenType;
 
 
+/**
+ * @brief Token structure.
+ */
 typedef struct Token {
     char *lexeme;
     TokenType type;
@@ -43,11 +54,29 @@ typedef struct Token {
 } Token;
 
 
+/**
+ * @brief Tokenize a file with the lexer.
+ * @param filename The file path.
+ * @return The token list.
+ */
 Token *tokenize(char *filename);
 
+/**
+ * @brief Convert token type to string.
+ * @param type The token type.
+ * @return The string.
+ */
 char *token_type_to_str(TokenType type);
 
+/**
+ * @brief Free a token.
+ * @param token The token.
+ */
 void free_token(Token *token);
+/**
+ * @brief Free multiple tokens.
+ * @param token The token.
+ */
 void free_tokens(Token *token);
 
 #endif // LEXER_H

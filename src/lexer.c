@@ -8,7 +8,6 @@
 /**
  * @brief Enum for Character classes.
  */
-
 typedef enum {
     START,
     ID,
@@ -39,6 +38,9 @@ typedef enum {
     ERROR
 } State;
 
+/**
+ * @brief List for reverse mapping of token types.
+ */
 TokenType lexeme_list[30] = {
     ID_TOKEN,
     NUM_TOKEN,
@@ -72,6 +74,9 @@ TokenType lexeme_list[30] = {
     WHILE_TOKEN,
 };
 
+/**
+ * @brief Enum for Character classes.
+ */
 typedef enum {
     CC_LETTER,
     CC_DIGIT,
@@ -96,6 +101,9 @@ typedef enum {
     CC_OTHER
 } CharClass;
 
+/**
+ * @brief Transition table for the lexer.
+ */
 State transition_table[25][21] = {
     {ID, NUM, START, PLUS, MINUS, TIMES, DIV, LT, GT, ASSIGN, NOT, SEMICOLON, COMMA, LPAR, RPAR, LBRACKET, RBRACKET, LBRACE, RBRACE, OK, ERROR},
     {ID, ERROR, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK, OK},
@@ -125,7 +133,11 @@ State transition_table[25][21] = {
 };
 
 
-
+/**
+ * @brief Get the character class.
+ * @param c The character.
+ * @return The character class.
+ */
 CharClass get_char_class(char c) {
     if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
         return CC_LETTER;
@@ -157,6 +169,9 @@ CharClass get_char_class(char c) {
     }
 }
 
+/**
+ * @brief Reserved words list.
+ */
 char *reserved_words[] = {
     "else",
     "if",
@@ -165,6 +180,10 @@ char *reserved_words[] = {
     "void",
     "while"
 };
+
+/**
+ * @brief Reserved words types mapping to reserved words list.
+ */
 TokenType reserved_words_types[] = {
     ELSE_TOKEN,
     IF_TOKEN,
@@ -173,8 +192,14 @@ TokenType reserved_words_types[] = {
     VOID_TOKEN,
     WHILE_TOKEN
 };
-#define NUM_RESERVED_WORDS 6
-#define MAX_WORD_SIZE 6
+#define NUM_RESERVED_WORDS 6  // Number of reserved words
+#define MAX_WORD_SIZE 6  // Maximum size of a reserved word
+/**
+ * @brief Check if a lexeme is a reserved word.
+ * @param lexeme The lexeme.
+ * @param lexeme_size The lexeme size.
+ * @return The token type.
+ */
 TokenType check_reserved_word(char *lexeme, int lexeme_size) {
     /*
      * n is the number of reserved words
@@ -197,6 +222,14 @@ TokenType check_reserved_word(char *lexeme, int lexeme_size) {
     return ID_TOKEN;
 }
 
+/**
+ * @brief Create a new token.
+ * @param lexeme The lexeme.
+ * @param lexeme_size The lexeme size.
+ * @param type The token type.
+ * @param line The line.
+ * @return The token.
+ */
 Token *new_token(char *lexeme, int lexeme_size, TokenType type, int line) {
     if (type == ID_TOKEN) {
         type = check_reserved_word(lexeme, lexeme_size);
@@ -212,6 +245,11 @@ Token *new_token(char *lexeme, int lexeme_size, TokenType type, int line) {
     return token;
 }
 
+/**
+ * @brief Convert token type to string.
+ * @param type The token type.
+ * @return The string.
+ */
 char *token_type_to_str(TokenType type) {
     switch (type) {
         case ID_TOKEN: return "ID";
@@ -249,11 +287,19 @@ char *token_type_to_str(TokenType type) {
 }
 
 
+/**
+ * @brief Free a token.
+ * @param token The token.
+ */
 void free_token(Token *token) {
     free(token->lexeme);
     free(token);
 }
 
+/**
+ * @brief Free multiple tokens.
+ * @param token The token.
+ */
 void free_tokens(Token *token) {
     Token *next;
     while (token != NULL) {
@@ -263,6 +309,11 @@ void free_tokens(Token *token) {
     }
 }
 
+/**
+ * @brief Tokenize a file with the lexer.
+ * @param filename The filename.
+ * @return The token list.
+ */
 Token *tokenize(char *filename) {
     int line = 1;
     int column = 1;
