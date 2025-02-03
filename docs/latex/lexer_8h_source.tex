@@ -1,0 +1,62 @@
+\doxysection{lexer.\+h}
+\hypertarget{lexer_8h_source}{}\label{lexer_8h_source}\index{include/lexer.h@{include/lexer.h}}
+\mbox{\hyperlink{lexer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LEXER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LEXER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ ID\_TOKEN,}
+\DoxyCodeLine{00014\ \ \ \ \ NUM\_TOKEN,}
+\DoxyCodeLine{00015\ \ \ \ \ PLUS\_TOKEN,}
+\DoxyCodeLine{00016\ \ \ \ \ MINUS\_TOKEN,}
+\DoxyCodeLine{00017\ \ \ \ \ TIMES\_TOKEN,}
+\DoxyCodeLine{00018\ \ \ \ \ DIV\_TOKEN,}
+\DoxyCodeLine{00019\ \ \ \ \ LT\_TOKEN,}
+\DoxyCodeLine{00020\ \ \ \ \ LT\_EQ\_TOKEN,}
+\DoxyCodeLine{00021\ \ \ \ \ GT\_TOKEN,}
+\DoxyCodeLine{00022\ \ \ \ \ GT\_EQ\_TOKEN,}
+\DoxyCodeLine{00023\ \ \ \ \ EQ\_TOKEN,}
+\DoxyCodeLine{00024\ \ \ \ \ NEQ\_TOKEN,}
+\DoxyCodeLine{00025\ \ \ \ \ NOT\_TOKEN,}
+\DoxyCodeLine{00026\ \ \ \ \ ASSIGN\_TOKEN,}
+\DoxyCodeLine{00027\ \ \ \ \ SEMICOLON\_TOKEN,}
+\DoxyCodeLine{00028\ \ \ \ \ COMMA\_TOKEN,}
+\DoxyCodeLine{00029\ \ \ \ \ LPAR\_TOKEN,}
+\DoxyCodeLine{00030\ \ \ \ \ RPAR\_TOKEN,}
+\DoxyCodeLine{00031\ \ \ \ \ LBRACKET\_TOKEN,}
+\DoxyCodeLine{00032\ \ \ \ \ RBRACKET\_TOKEN,}
+\DoxyCodeLine{00033\ \ \ \ \ LBRACE\_TOKEN,}
+\DoxyCodeLine{00034\ \ \ \ \ RBRACE\_TOKEN,}
+\DoxyCodeLine{00035\ \ \ \ \ LCOMMENT\_TOKEN,}
+\DoxyCodeLine{00036\ \ \ \ \ RCOMMENT\_TOKEN,}
+\DoxyCodeLine{00037\ \ \ \ \ ELSE\_TOKEN,}
+\DoxyCodeLine{00038\ \ \ \ \ IF\_TOKEN,}
+\DoxyCodeLine{00039\ \ \ \ \ INT\_TOKEN,}
+\DoxyCodeLine{00040\ \ \ \ \ RETURN\_TOKEN,}
+\DoxyCodeLine{00041\ \ \ \ \ VOID\_TOKEN,}
+\DoxyCodeLine{00042\ \ \ \ \ WHILE\_TOKEN,}
+\DoxyCodeLine{00043\ \}\ \mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structToken}{Token}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{char}\ *lexeme;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ type;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structToken}{Token}}\ *next;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ line;}
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{lexer_8h_ae88d5c0259051080fda097b92d99d7ee}{Token}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \mbox{\hyperlink{structToken}{Token}}\ *\mbox{\hyperlink{lexer_8h_ac241fa9a6a4c9bc076e2d6c5c2b35c11}{tokenize}}(\textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{lexer_8h_a6e2041f53e22daf2ef2b83daa730dd22}{token\_type\_to\_str}}(\mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ type);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer_8h_af2c0c132479d97aae25fcce9d6a749eb}{free\_token}}(\mbox{\hyperlink{structToken}{Token}}\ *token);}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lexer_8h_a25b7e256714c6ef4fb0056c5e41c58ee}{free\_tokens}}(\mbox{\hyperlink{structToken}{Token}}\ *token);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LEXER\_H}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+
+\end{DoxyCode}

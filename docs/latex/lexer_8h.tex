@@ -1,0 +1,155 @@
+\doxysection{include/lexer.h File Reference}
+\hypertarget{lexer_8h}{}\label{lexer_8h}\index{include/lexer.h@{include/lexer.h}}
+
+
+This module tokenizes a C file.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structToken}{Token}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structToken}{Token} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lexer_8h_ae88d5c0259051080fda097b92d99d7ee}\label{lexer_8h_ae88d5c0259051080fda097b92d99d7ee} 
+typedef struct Token {\bfseries Token}
+\begin{DoxyCompactList}\small\item\em \doxylink{structToken}{Token} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{lexer_8h_aa520fbf142ba1e7e659590c07da31921}\label{lexer_8h_aa520fbf142ba1e7e659590c07da31921} 
+enum \mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \{ \newline
+{\bfseries ID\+\_\+\+TOKEN}
+, {\bfseries NUM\+\_\+\+TOKEN}
+, {\bfseries PLUS\+\_\+\+TOKEN}
+, {\bfseries MINUS\+\_\+\+TOKEN}
+, \newline
+{\bfseries TIMES\+\_\+\+TOKEN}
+, {\bfseries DIV\+\_\+\+TOKEN}
+, {\bfseries LT\+\_\+\+TOKEN}
+, {\bfseries LT\+\_\+\+EQ\+\_\+\+TOKEN}
+, \newline
+{\bfseries GT\+\_\+\+TOKEN}
+, {\bfseries GT\+\_\+\+EQ\+\_\+\+TOKEN}
+, {\bfseries EQ\+\_\+\+TOKEN}
+, {\bfseries NEQ\+\_\+\+TOKEN}
+, \newline
+{\bfseries NOT\+\_\+\+TOKEN}
+, {\bfseries ASSIGN\+\_\+\+TOKEN}
+, {\bfseries SEMICOLON\+\_\+\+TOKEN}
+, {\bfseries COMMA\+\_\+\+TOKEN}
+, \newline
+{\bfseries LPAR\+\_\+\+TOKEN}
+, {\bfseries RPAR\+\_\+\+TOKEN}
+, {\bfseries LBRACKET\+\_\+\+TOKEN}
+, {\bfseries RBRACKET\+\_\+\+TOKEN}
+, \newline
+{\bfseries LBRACE\+\_\+\+TOKEN}
+, {\bfseries RBRACE\+\_\+\+TOKEN}
+, {\bfseries LCOMMENT\+\_\+\+TOKEN}
+, {\bfseries RCOMMENT\+\_\+\+TOKEN}
+, \newline
+{\bfseries ELSE\+\_\+\+TOKEN}
+, {\bfseries IF\+\_\+\+TOKEN}
+, {\bfseries INT\+\_\+\+TOKEN}
+, {\bfseries RETURN\+\_\+\+TOKEN}
+, \newline
+{\bfseries VOID\+\_\+\+TOKEN}
+, {\bfseries WHILE\+\_\+\+TOKEN}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{structToken}{Token} types enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer_8h_ac241fa9a6a4c9bc076e2d6c5c2b35c11}{tokenize}} (char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Tokenize a file with the lexer. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lexer_8h_a6e2041f53e22daf2ef2b83daa730dd22}{token\+\_\+type\+\_\+to\+\_\+str}} (\mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Convert token type to string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lexer_8h_af2c0c132479d97aae25fcce9d6a749eb}{free\+\_\+token}} (\mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*}token)
+\begin{DoxyCompactList}\small\item\em Free a token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lexer_8h_a25b7e256714c6ef4fb0056c5e41c58ee}{free\+\_\+tokens}} (\mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*}token)
+\begin{DoxyCompactList}\small\item\em Free multiple tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module tokenizes a C file. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lexer_8h_af2c0c132479d97aae25fcce9d6a749eb}\label{lexer_8h_af2c0c132479d97aae25fcce9d6a749eb} 
+\index{lexer.h@{lexer.h}!free\_token@{free\_token}}
+\index{free\_token@{free\_token}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{free\_token()}{free\_token()}}
+{\footnotesize\ttfamily void free\+\_\+token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+
+
+Free a token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lexer_8h_a25b7e256714c6ef4fb0056c5e41c58ee}\label{lexer_8h_a25b7e256714c6ef4fb0056c5e41c58ee} 
+\index{lexer.h@{lexer.h}!free\_tokens@{free\_tokens}}
+\index{free\_tokens@{free\_tokens}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{free\_tokens()}{free\_tokens()}}
+{\footnotesize\ttfamily void free\+\_\+tokens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*}}]{token }\end{DoxyParamCaption})}
+
+
+
+Free multiple tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lexer_8h_a6e2041f53e22daf2ef2b83daa730dd22}\label{lexer_8h_a6e2041f53e22daf2ef2b83daa730dd22} 
+\index{lexer.h@{lexer.h}!token\_type\_to\_str@{token\_type\_to\_str}}
+\index{token\_type\_to\_str@{token\_type\_to\_str}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{token\_type\_to\_str()}{token\_type\_to\_str()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} token\+\_\+type\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lexer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Convert token type to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The token type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string. 
+\end{DoxyReturn}
+\Hypertarget{lexer_8h_ac241fa9a6a4c9bc076e2d6c5c2b35c11}\label{lexer_8h_ac241fa9a6a4c9bc076e2d6c5c2b35c11} 
+\index{lexer.h@{lexer.h}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!lexer.h@{lexer.h}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structToken}{Token}} \texorpdfstring{$\ast$}{*} tokenize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Tokenize a file with the lexer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The token list.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The token list. 
+\end{DoxyReturn}
