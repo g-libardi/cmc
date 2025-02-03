@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "scanner.h"
 #include "lexer.h"
+#include "pparser.h"
 #include <string.h>
 
 void run_lexical_analyzer(char *filename) {
@@ -12,6 +13,12 @@ void run_lexical_analyzer(char *filename) {
         token = token->next;
     }
     free_tokens(head);
+}
+
+void run_parser(char *filename) {
+    Token *token = tokenize(filename);
+    parse(token);
+    free_tokens(token);
 }
 
 int main(int argc, char *argv[])
@@ -26,6 +33,9 @@ int main(int argc, char *argv[])
             return 0;
         } else if (strcmp(argv[i], "-l") == 0 || strcmp(argv[i], "-L") == 0) {
             run_lexical_analyzer(argv[i + 1]);
+            return 0;
+        } else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-P") == 0) {
+            run_parser(argv[i + 1]);
             return 0;
         }
     }
